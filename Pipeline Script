@@ -1,0 +1,35 @@
+pipeline {
+    agent any
+
+    stages {
+        stage ('CloneFromGithub') {
+            steps {
+                script{
+                    sh 'echo "This is from Github"'
+                    sh 'whoami'
+                }
+            }
+        }
+        stage ('Build') {
+            steps{
+                script{
+                    sh 'echo "Building....."'
+                }
+            }
+        }
+         stage ('Docker') {
+            steps{
+                script{
+                    sh 'docker --version'
+                }
+            }
+        }
+        stage ('Deploy') {
+            steps {
+                script{
+                    sh 'echo "Deployment successful"'
+                }
+            }
+        }
+    }
+}
