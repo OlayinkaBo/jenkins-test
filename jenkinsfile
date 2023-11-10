@@ -5,8 +5,8 @@ pipeline {
         stage ('CloneFromGithub') {
             steps {
                 script{
-                    sh 'echo "This is from Github"'
-                    sh 'whoami'
+                    git branch: 'main', url: 'https://github.com/OlayinkaBo/jenkins-test.git'
+                    sh 'ls'
                 }
             }
         }
